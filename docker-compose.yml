@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  offshore-proxy:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "9999:9999"
+    networks:
+      - proxy-network
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    
+  ship-proxy:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - proxy-network
+    depends_on:
+      - offshore-proxy
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - OFFSHORE_HOST=offshore-proxy
+      - OFFSHORE_PORT=9999
+
+networks:
+  proxy-network:
+    driver: bridge
