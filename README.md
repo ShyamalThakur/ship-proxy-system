@@ -13,13 +13,13 @@ Browser/curl → Ship Proxy (8080) → Single TCP → Offshore Proxy (9999) → 
 
 ## Features
 
-- ✅ Single persistent TCP connection between ship and offshore proxy
-- ✅ Sequential request processing to ensure reliability
-- ✅ Support for all HTTP methods (GET, POST, PUT, DELETE, etc.)
-- ✅ HTTPS support via CONNECT method tunneling
-- ✅ Automatic reconnection on connection failures
-- ✅ Docker support with multi-architecture builds
-- ✅ Works with curl, browsers, and other HTTP clients
+-  Single persistent TCP connection between ship and offshore proxy
+-  Sequential request processing to ensure reliability
+-  Support for all HTTP methods (GET, POST, PUT, DELETE, etc.)
+-  HTTPS support via CONNECT method tunneling
+-  Automatic reconnection on connection failures
+-  Docker support with multi-architecture builds
+-  Works with curl, browsers, and other HTTP clients
 
 ## Quick Start
 
